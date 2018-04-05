@@ -8,6 +8,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
                        url(r'^$', UserList.as_view()),
+                       url(r'^gui/$', UserList_gui.as_view()),
                        url(r'^api-token-auth/', views.obtain_auth_token),
                        url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
                        #url(r'^$', 'tang.views.UserList', name="dashboard"),
