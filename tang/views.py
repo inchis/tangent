@@ -30,9 +30,10 @@ class UserList(generics.ListCreateAPIView):
 
 
 class UserMe(APIView):
-    serializer_class = UserSerializer
+    serializer_class = EmployeeSerializer
 
     def get(self, request):
         context = dict(request=APIRequestFactory().get('/'))
-        serializer = UserSerializer(request.user, context=context)
+        queryset = Employee.objects.get(user=request.user)
+        serializer = EmployeeSerializer(queryset, context=context)
         return Response(serializer.data)
