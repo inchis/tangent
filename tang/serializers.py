@@ -20,3 +20,7 @@ class EmployeeSerializer(serializers.ModelSerializer):
         model = Employee
         fields = ('created', 'user', 'birth_date', 'gender', 'race', 'position', 'start_date', 'email', 'review')
         depth = 1
+
+
+
+
